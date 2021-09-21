@@ -355,7 +355,7 @@ variable "network_rules_bypass" {
   default     = ["AzureServices"]
 
   validation {
-    condition     = var.network_rules_bypass == null || can(regex("^(Logging|Metrics|AzureServices|None)$", var.network_rules_bypass))
+    condition     = var.network_rules_bypass == null || can(contains(var.network_rules_bypass, "Logging") || contains(var.network_rules_bypass, "Metrics") || contains(var.network_rules_bypass, "AzureServices") || contains(var.network_rules_bypass, "None"))
     error_message = "The variable network_rules_bypass must be one of `Logging`, `Metrics`, `AzureServices` or `None`."
   }
 }
