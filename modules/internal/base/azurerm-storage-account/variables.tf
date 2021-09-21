@@ -66,7 +66,7 @@ variable "enable_https_traffic_only" {
 variable "min_tls_version" {
   description = "The minimum supported TLS version for the storage account. Possible values are TLS1_0, TLS1_1, and TLS1_2."
   type        = string
-  default     = "TLS1_0"
+  default     = "TLS1_2"
 
   validation {
     condition     = can(regex("^(TLS1_0|TLS1_1|TLS1_2)$", var.min_tls_version))
@@ -329,13 +329,13 @@ variable "azure_files_authentication_active_directory_domain_sid" {
 variable "azure_files_authentication_active_directory_forest_name" {
   description = "Specifies the Active Directory forest."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "azure_files_authentication_active_directory_netbios_domain_name" {
   description = "Specifies the NetBIOS domain name."
   type        = string
-  default = null
+  default     = null
 }
 
 variable "network_rules_default_action" {
@@ -352,7 +352,7 @@ variable "network_rules_default_action" {
 variable "network_rules_bypass" {
   description = " Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Valid options are any combination of Logging, Metrics, AzureServices, or None."
   type        = list(string)
-  default     = null
+  default     = ["AzureServices"]
 
   validation {
     condition     = var.network_rules_bypass == null || can(regex("^(Logging|Metrics|AzureServices|None)$", var.network_rules_bypass))

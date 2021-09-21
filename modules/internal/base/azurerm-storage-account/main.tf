@@ -105,7 +105,7 @@ resource "azurerm_storage_account" "this" {
       bypass                     = var.network_rules_bypass
       ip_rules                   = var.network_rules_ip_rules
       virtual_network_subnet_ids = var.network_rules_virtual_network_subnet_ids
-      dynamic "private_link_access" { # multiple here
+      dynamic "private_link_access" {
         for_each = var.network_rules_private_link_access_endpoint != null ? var.network_rules_private_link_access_endpoint : []
         content {
           endpoint_resource_id = private_link_access.value.endpoint_resource_id

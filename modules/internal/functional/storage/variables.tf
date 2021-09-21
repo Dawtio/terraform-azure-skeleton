@@ -1,6 +1,6 @@
 variable "context" {
   description = "Context for the environment."
-  type        = object({
+  type = object({
     project_name     = string
     environment      = string
     environment_code = string
