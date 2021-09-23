@@ -8,8 +8,8 @@ terraform {
   }
   backend "remote" {
     organization = "Dawtio"
-    workspaces {      
-      name = "infra-dev"    
-    }  
+    workspaces {
+      name = "infra-dev"
+    }
   }
 }
