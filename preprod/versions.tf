@@ -9,8 +9,8 @@ terraform {
 
   backend "remote" {
     organization = "Dawtio"
-    workspaces {      
-      name = "infra-hp"    
-    }  
+    workspaces {
+      name = "infra-hp"
+    }
   }
 }
