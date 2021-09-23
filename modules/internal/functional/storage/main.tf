@@ -1,6 +1,7 @@
 locals {
   storage_accounts = {
-    "asa" = {}
+    "asa" = {},
+    "foo" = {},
   }
 }
 
