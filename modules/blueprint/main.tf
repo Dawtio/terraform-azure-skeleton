@@ -10,7 +10,7 @@ module "resource_groups" {
   source   = "../internal/base/azurerm-resource-group"
 
   name     = "RG-DAWTIO-${upper(var.name)}"
-  location = "westeurope"
+  location = "northeurope"
 }
 
 locals {

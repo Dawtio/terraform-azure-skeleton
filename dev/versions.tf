@@ -6,4 +6,10 @@ terraform {
       source  = "hashicorp/azurerm"
     }
   }
+  backend "remote" {
+    organization = "Dawtio"
+    workspaces {      
+      name = "infra-dev"    
+    }  
+  }
 }

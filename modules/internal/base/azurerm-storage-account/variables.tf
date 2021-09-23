@@ -288,10 +288,10 @@ variable "queue_properties_hour_metrics" {
 variable "azure_files_authentication_directory_type" {
   description = "Specifies the directory service used. Possible values are AADDS and AD."
   type        = string
-  default     = "AD"
+  default     = null
 
   validation {
-    condition     = can(regex("^(AADDS|AD)$", var.azure_files_authentication_directory_type))
+    condition     = var.azure_files_authentication_directory_type == null || can(regex("^(AADDS|AD)$", var.azure_files_authentication_directory_type))
     error_message = "The variable azure_files_authentication_directory_type must be one of `AADDS` or `AD`."
   }
 }
