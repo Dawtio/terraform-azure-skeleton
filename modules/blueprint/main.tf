@@ -30,3 +30,11 @@ module "storage" {
 
   context = local.context
 }
+
+module "law" {
+  source = "../internal/base/azurerm-log-analytics-workspace"
+
+  name                = "dawtio-law"
+  location            = module.resource_groups.this.location
+  resource_group_name = module.resource_groups.this.name
+}
