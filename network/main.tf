@@ -52,7 +52,7 @@ module "vnets" {
 
 module "subnets" {
   for_each = local.subnets
-  source   = "../modules/base/azurerm-virtual-network"
+  source   = "../modules/base/azurerm-subnet"
 
   name                 = each.key
   virtual_network_name = module.vnets[each.value["parent"]].this.name

@@ -22,5 +22,4 @@ resource "azurerm_virtual_network" "this" {
   name                  = var.name
   resource_group_name   = var.resource_group_name
   tags                  = var.tags
-  vm_protection_enabled = var.vm_protection_enabled
 }

@@ -48,12 +48,6 @@ variable "dns_servers" {
   default     = null
 }
 
-variable "vm_protection_enabled" {
-  description = "Whether to enable VM protection for all the subnets in this Virtual Network."
-  type        = bool
-  default     = false
-}
-
 variable "tags" {
   description = "A mapping of tags to assign to the resource."
   type        = map(string)
