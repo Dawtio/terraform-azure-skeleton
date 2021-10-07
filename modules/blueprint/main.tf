@@ -7,7 +7,7 @@ locals {
 }
 
 module "resource_groups" {
-  source = "../internal/base/azurerm-resource-group"
+  source = "../base/azurerm-resource-group"
 
   name     = "RG-DAWTIO-${upper(var.name)}"
   location = "northeurope"
@@ -26,13 +26,13 @@ locals {
 }
 
 module "storage" {
-  source = "../internal/functional/storage"
+  source = "../functional/storage"
 
   context = local.context
 }
 
 module "law" {
-  source = "../internal/base/azurerm-log-analytics-workspace"
+  source = "../base/azurerm-log-analytics-workspace"
 
   name                = "dawtio-law"
   location            = module.resource_groups.this.location
