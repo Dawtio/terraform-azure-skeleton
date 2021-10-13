@@ -8,33 +8,21 @@ module "resource_group" {
 locals {
   vnets = {
     "vnet_dawtio" = {
-      cidr = ["10.0.0.0/24"]
-    }
+      cidr = ["10.0.0.0/26"]
+    },
   }
   subnets = {
     "subnet_dv" = {
         parent = "vnet_dawtio"
-        cidr   = ["10.0.0.0/27"]
-    },
-    "subnet_aks_dv" = {
-        parent = "vnet_dawtio"
-        cidr   = ["10.0.0.32/27"]
+        cidr   = ["10.0.0.0/28"] // 16 Hosts
     },
     "subnet_hp" = {
         parent = "vnet_dawtio"
-        cidr   = ["10.0.0.64/27"]
-    },
-    "subnet_aks_hp" = {
-        parent = "vnet_dawtio"
-        cidr   = ["10.0.0.96/27"]
+        cidr   = ["10.0.0.16/28"] // 16 Hosts
     },
     "subnet_p" = {
         parent = "vnet_dawtio"
-        cidr   = ["10.0.0.128/27"]
-    },
-    "subnet_aks_p" = {
-        parent = "vnet_dawtio"
-        cidr   = ["10.0.0.160/27"]
+        cidr   = ["10.0.0.32/28"] // 16 Hosts
     },
   }
   nsg = {}
