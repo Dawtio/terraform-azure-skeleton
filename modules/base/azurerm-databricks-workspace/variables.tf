@@ -154,4 +154,3 @@ variable "custom_parameters_vnet_address_prefix" {
   type        = string
   default     = "10.139"
 }
-
